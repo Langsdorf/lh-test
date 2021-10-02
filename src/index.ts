@@ -1,11 +1,12 @@
 import express from "express";
 import bodyParser from "body-parser";
-import { UserRouter } from "routes";
+import { UserRouter, AuthRouter } from "routes";
 
 const app = express();
 app.use(bodyParser.json());
 
 app.use("/user", UserRouter);
+app.use("/auth", AuthRouter);
 
 app.all("*", (req: express.Request, res: express.Response) => {
   res.status(404).json({

@@ -48,7 +48,7 @@ const updateUser = (newUser: UpdateUserObject) => {
 
   Object.assign(user, newUser);
 
-  writeFileSync("json/user.json", JSON.stringify(userFile), "utf-8");
+  writeFileSync("src/json/user.json", JSON.stringify(userFile), "utf-8");
 
   return {
     statusCode: 200,

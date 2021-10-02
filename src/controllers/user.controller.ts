@@ -22,8 +22,8 @@ const getUser = (req: Request) => {
 
 const updateUser = (req: Request) => {
   const user: User = {
+    email: req.params.email,
     nome: req.body.nome,
-    email: req.body.email,
     telefone: req.body.telefone,
     senha: req.body.senha,
     confirmacao_senha: req.body.confirmacao_senha,

@@ -1,5 +1,6 @@
 import { UserController } from "controllers";
 import { Router } from "express";
+import { AuthenticationMiddleware } from "middlewares";
 
 const router = Router();
 
@@ -15,7 +16,7 @@ router.post("/", (req, res) => {
 /**
  * Ver um usuário'1
  */
-router.get("/:email", (req, res) => {
+router.get("/:email", AuthenticationMiddleware, (req, res) => {
   const response = UserController.getUser(req);
 
   return res.status(response.statusCode).json(response);
@@ -24,7 +25,7 @@ router.get("/:email", (req, res) => {
 /**
  * Editar usuário
  */
-router.patch("/:email", (req, res) => {
+router.patch("/:email", AuthenticationMiddleware, (req, res) => {
   const response = UserController.updateUser(req);
 
   return res.status(response.statusCode).json(response);
@@ -33,7 +34,7 @@ router.patch("/:email", (req, res) => {
 /**
  * Listagem de usuários
  */
-router.get("/", (req, res) => {
+router.get("/", AuthenticationMiddleware, (req, res) => {
   const response = UserController.getUsers(req);
 
   return res.status(response.statusCode).json(response);
