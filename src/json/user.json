@@ -209,6 +209,13 @@
             "telefone": "123-123",
             "senha": "12345678Ab",
             "confirmacao_senha": "12345678Ab"
+        },
+        {
+            "nome": "Teste postman",
+            "email": "postman@gmail.com",
+            "telefone": "123-123",
+            "senha": "12345678Ab",
+            "confirmacao_senha": "12345678Ab"
         }
     ]
 }
